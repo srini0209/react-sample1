@@ -1,0 +1,14 @@
+#likeButton, #changeButton{
+    background-color: #0b7fdf;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #949393;
+}
+#likeButton button, #changeButton button{
+    border: none;
+    background-color: #0b7fdf;
+    color: #fff;
+    font-weight: bold;
+}
