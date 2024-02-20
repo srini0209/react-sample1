@@ -2,10 +2,9 @@ import React from "react";
 import "./content.css";
 import { useState } from "react";
 import { FaTrashAlt } from 'react-icons/fa';
-import Footer from "./Footer";
 
 export const Content = () => {
-  const [count, setCount] = useState(0);
+/*   const [count, setCount] = useState(0);
   function increaseLikeCount() {
     setCount((like) => {
       return like + 1;
@@ -20,7 +19,7 @@ export const Content = () => {
     let langs = ["React", "Angular", "Vue"];
     let randint = Math.floor(Math.random() * 3);
     return langs[randint];
-  }
+  } */
   const [items, setItems] = useState(
     [
       {
@@ -29,17 +28,17 @@ export const Content = () => {
         label: "Task 1"
       },
       {
-        id: 1,
+        id: 2,
         checked: true,
         label: "Task 2"
       },
       {
-        id: 1,
+        id: 3,
         checked: false,
         label: "Task 3"
       },
       {
-        id: 1,
+        id: 4,
         checked: true,
         label: "Task 4"
       }
@@ -48,7 +47,7 @@ export const Content = () => {
 
   return (
     <div>
-      <p>Learn {lang}</p>
+      {/* <p>Learn {lang}</p> */}
       <div className="container">
         {/* <div className="row">
           <span id="changeButton" className="col w-10 m-3">
