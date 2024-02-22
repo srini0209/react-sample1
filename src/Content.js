@@ -2,6 +2,11 @@ import React from "react";
 import "./content.css";
 import { useState } from "react";
 import { FaTrashAlt } from 'react-icons/fa';
+<<<<<<< HEAD
+=======
+import Footer from "./Footer";
+import { TaskStatus } from "./TaskStatus";
+>>>>>>> 46b7a08 (Added props & conditioning)
 
 export const Content = () => {
 /*   const [count, setCount] = useState(0);
@@ -60,11 +65,12 @@ export const Content = () => {
         </div> */}
         <ul style={{ listStyleType: 'none' }}>
           {items.map((item) => (
-            <li>
-              <input id={item.id} 
-                type="checkbox" className="mx-2" checked={item.checked}  >
-              </input><label for={item.id}>{item.label}</label>
-              <FaTrashAlt className="mx-2" />
+            <li className="d-flex" style={{alignItems:"center",height:'auto'}}>
+              <input id={item.id}
+                type="checkbox" className="mx-2 d-flex" style={{alignItems:"center"}} checked={item.checked}  >
+              </input><label for={item.id} className="mx-2 d-flex" style={{alignItems:"center"}}>{item.label}</label> 
+              <FaTrashAlt className="mx-2 d-flex" style={{alignItems:"center"}} />
+              <TaskStatus taskStatus={item.checked} className="mx-2 d-flex"  style={{alignItems:"center"}} />
             </li>
           ))}
         </ul>
