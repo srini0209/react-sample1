@@ -2,11 +2,8 @@ import React from "react";
 import "./content.css";
 import { useState } from "react";
 import { FaTrashAlt } from 'react-icons/fa';
-<<<<<<< HEAD
-=======
 import Footer from "./Footer";
 import { TaskStatus } from "./TaskStatus";
->>>>>>> 46b7a08 (Added props & conditioning)
 
 export const Content = () => {
 /*   const [count, setCount] = useState(0);
