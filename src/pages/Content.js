@@ -2,8 +2,8 @@ import React from "react";
 import "./content.css";
 import { useState } from "react";
 import { FaTrashAlt } from 'react-icons/fa';
-import Footer from "./Footer";
-import { TaskStatus } from "./TaskStatus";
+import Footer from "../Footer";
+import { TaskStatus } from "../TaskStatus";
 
 export const Content = () => {
 /*   const [count, setCount] = useState(0);
