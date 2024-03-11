@@ -6,22 +6,22 @@ import Footer from "../Footer";
 import { TaskStatus } from "../TaskStatus";
 
 export const Content = () => {
-/*   const [count, setCount] = useState(0);
-  function increaseLikeCount() {
-    setCount((like) => {
-      return like + 1;
-    });
-  }
-  const [lang, setLang] = useState("React");
-  function changeLang() {
-    setLang(() => selectLang());
-  }
-
-  function selectLang() {
-    let langs = ["React", "Angular", "Vue"];
-    let randint = Math.floor(Math.random() * 3);
-    return langs[randint];
-  } */
+  /*   const [count, setCount] = useState(0);
+    function increaseLikeCount() {
+      setCount((like) => {
+        return like + 1;
+      });
+    }
+    const [lang, setLang] = useState("React");
+    function changeLang() {
+      setLang(() => selectLang());
+    }
+  
+    function selectLang() {
+      let langs = ["React", "Angular", "Vue"];
+      let randint = Math.floor(Math.random() * 3);
+      return langs[randint];
+    } */
   const [items, setItems] = useState(
     [
       {
@@ -62,12 +62,27 @@ export const Content = () => {
         </div> */}
         <ul style={{ listStyleType: 'none' }}>
           {items.map((item) => (
-            <li className="d-flex" style={{alignItems:"center",height:'auto'}}>
-              <input id={item.id}
-                type="checkbox" className="mx-2 d-flex" style={{alignItems:"center"}} checked={item.checked}  >
-              </input><label for={item.id} className="mx-2 d-flex" style={{alignItems:"center"}}>{item.label}</label> 
-              <FaTrashAlt className="mx-2 d-flex" style={{alignItems:"center"}} />
-              <TaskStatus taskStatus={item.checked} className="mx-2 d-flex"  style={{alignItems:"center"}} />
+            <li className="d-flex item" key={item.id} style={{ alignItems: "center", height: 'auto' }}>
+              <input
+                type="checkbox"
+                className="mx-2 d-flex"
+                style={{ alignItems: "center" }}
+                checked={item.checked}  >
+              </input>
+              <label
+                className="mx-2 d-flex"
+                style={{ alignItems: "center" }}>
+                {item.label}
+              </label>
+              <FaTrashAlt
+                className="mx-2 d-flex"
+                style={{ alignItems: "center" }}
+              />
+              <TaskStatus
+                taskStatus={item.checked}
+                className="mx-2 d-flex"
+                style={{ alignItems: "center" }}
+              />
             </li>
           ))}
         </ul>

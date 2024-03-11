@@ -12,3 +12,22 @@
     color: #fff;
     font-weight: bold;
 }
+
+.item{
+    background-color: #eee;
+    display: flex;
+    margin: 10px;
+    padding:5px;
+}
+.item input[type='checkbox']{
+    height: 30px;
+    width: 30px;
+    background-color: #0b7fdf;
+}
+.item input[type='checkbox']+label{
+    font-size: 26px;
+}
+.item svg{
+    font-size: 30px;
+    color:red;
+}

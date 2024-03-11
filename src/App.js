@@ -17,8 +17,8 @@ function App() {
       <BrowserRouter >
         <Routes>
           <Route path="/" element={<Header />}>
-            <Route index element={<Home />} />
-            <Route path="todolist" element={<ToDoList />} />
+            <Route index element={<ToDoList />} />
+            <Route path="home" element={<Home />} />
             <Route path="blogs" element={<Blogs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
