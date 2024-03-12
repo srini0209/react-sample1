@@ -22,7 +22,7 @@ export const Content = () => {
       let randint = Math.floor(Math.random() * 3);
       return langs[randint];
     } */
-  const [items, setItems] = useState(
+  const [List_items, setList_items] = useState(
     [
       {
         id: 1,
@@ -46,7 +46,16 @@ export const Content = () => {
       }
     ]
   );
-
+  const handleCheckBox = (id) => {
+    const Listitems = List_items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+    setList_items(Listitems);
+    localStorage.setItem("todo_list", JSON.stringify(Listitems))
+  }
+  const removeItem = (id) => {
+    const rm = List_items.filter((item) => item.id !== id);
+    setList_items(rm);
+    localStorage.setItem("todo_list", JSON.stringify(rm))
+  }
   return (
     <div>
       {/* <p>Learn {lang}</p> */}
@@ -60,32 +69,38 @@ export const Content = () => {
             <span>{count}</span>
           </span>
         </div> */}
-        <ul style={{ listStyleType: 'none' }}>
-          {items.map((item) => (
-            <li className="d-flex item" key={item.id} style={{ alignItems: "center", height: 'auto' }}>
-              <input
-                type="checkbox"
-                className="mx-2 d-flex"
-                style={{ alignItems: "center" }}
-                checked={item.checked}  >
-              </input>
-              <label
-                className="mx-2 d-flex"
-                style={{ alignItems: "center" }}>
-                {item.label}
-              </label>
-              <FaTrashAlt
-                className="mx-2 d-flex"
-                style={{ alignItems: "center" }}
-              />
-              <TaskStatus
-                taskStatus={item.checked}
-                className="mx-2 d-flex"
-                style={{ alignItems: "center" }}
-              />
-            </li>
-          ))}
-        </ul>
+        {(List_items.length) ? (
+          <ul style={{ listStyleType: 'none' }}>
+            {List_items.map((item) => (
+              <li className="d-flex item" key={item.id} style={{ alignList_items: "center", height: 'auto' }}>
+                <input id={item.id}
+                  type="checkbox"
+                  className="mx-2 d-flex"
+                  style={{ alignList_items: "center" }}
+                  checked={item.checked}
+                  onChange={() => handleCheckBox(item.id)} >
+                </input>
+                <label for={item.id}
+                  className="mx-2 d-flex"
+                  style={(item.checked) ? { alignList_items: "center", textDecoration: 'line-through' } : null}>
+                  {item.label}
+                </label>
+                <FaTrashAlt
+                  className="mx-2 d-flex"
+                  style={{ alignList_items: "center" }}
+                  role="button" onClick={() => removeItem(item.id)}
+                  tabIndex='0'
+                />
+                <TaskStatus
+                  taskStatus={item.checked}
+                  className="mx-2 d-flex"
+                  style={{ alignList_items: "center" }}
+                />
+              </li>
+            ))}
+          </ul>
+        ) : <p>Your list is Empty.!</p>
+        }
       </div>
     </div>
   );

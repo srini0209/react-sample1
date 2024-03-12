@@ -1,33 +1,38 @@
-#likeButton, #changeButton{
-    background-color: #0b7fdf;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 6px #949393;
+#likeButton,
+#changeButton {
+  background-color: #0b7fdf;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px #949393;
 }
-#likeButton button, #changeButton button{
-    border: none;
-    background-color: #0b7fdf;
-    color: #fff;
-    font-weight: bold;
+#likeButton button,
+#changeButton button {
+  border: none;
+  background-color: #0b7fdf;
+  color: #fff;
+  font-weight: bold;
 }
 
-.item{
-    background-color: #eee;
-    display: flex;
-    margin: 10px;
-    padding:5px;
+.item {
+  background-color: #eee;
+  display: flex;
+  margin: 10px;
+  padding: 5px;
 }
-.item input[type='checkbox']{
-    height: 30px;
-    width: 30px;
-    background-color: #0b7fdf;
+.item input[type="checkbox"] {
+  height: 30px;
+  width: 30px;
+  background-color: #0b7fdf;
 }
-.item input[type='checkbox']+label{
-    font-size: 26px;
+.item input[type="checkbox"] + label {
+  font-size: 26px;
 }
-.item svg{
-    font-size: 30px;
-    color:red;
+.item svg {
+  font-size: 30px;
+}
+.item svg:focus,
+.item svg:hover {
+  color: red;
 }
