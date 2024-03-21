@@ -5,29 +5,29 @@ import { useState } from 'react'
 import AddItem from './AddItem.js'
 
 export const ToDoList = () => {
-    const [List_items, setList_items] = useState(
-        [
-            {
-                id: 1,
-                checked: true,
-                label: "Task 1"
-            },
-            {
-                id: 2,
-                checked: true,
-                label: "Task 2"
-            },
-            {
-                id: 3,
-                checked: false,
-                label: "Task 3"
-            },
-            {
-                id: 4,
-                checked: true,
-                label: "Task 4"
-            }
-        ]
+    const [List_items, setList_items] = useState(JSON.parse(localStorage.getItem('todo_list'))
+        // [
+        //     {
+        //         id: 1,
+        //         checked: true,
+        //         label: "Task 1"
+        //     },
+        //     {
+        //         id: 2,
+        //         checked: true,
+        //         label: "Task 2"
+        //     },
+        //     {
+        //         id: 3,
+        //         checked: false,
+        //         label: "Task 3"
+        //     },
+        //     {
+        //         id: 4,
+        //         checked: true,
+        //         label: "Task 4"
+        //     }
+        // ]
     );
     const handleCheckBox = (id) => {
         const Listitems = List_items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
