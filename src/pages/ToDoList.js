@@ -5,7 +5,8 @@ import { useState } from 'react'
 import AddItem from './AddItem.js'
 
 export const ToDoList = () => {
-    const [List_items, setList_items] = useState(JSON.parse(localStorage.getItem('todo_list'))
+    const [List_items, setList_items] = useState(
+        JSON.parse(localStorage.getItem('todo_list'))
         // [
         //     {
         //         id: 1,
